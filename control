@@ -1,0 +1,9 @@
+Package: com.1vk3.imsghue
+Name: imsghue
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: A tweak to modify the colors of the Messages app.
+Maintainer: Lucas Lowe
+Author: Lucas Lowe
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
