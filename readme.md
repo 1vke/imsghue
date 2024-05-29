@@ -14,8 +14,3 @@ At this time, this has only been tested on my personal device that is on iOS 16.
 I use macOS to build/compile this tweak. As of right now, it does not require any private libraries that might not work with theos's patched sdk's.
 
 Installation should be as simple as running a `make do`.
-
-# Plan
-After messing with the Messages app using FLEX, I have a theory of how the text balloon views are made.
-
-The next step would be to see how I can manipulate the initialization of the balloon classes to allow for custom colors.
