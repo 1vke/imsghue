@@ -10,3 +10,5 @@ imsghue_FILES = Tweak.x
 imsghue_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
+SUBPROJECTS += imsghuepreferences
+include $(THEOS_MAKE_PATH)/aggregate.mk
