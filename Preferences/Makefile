@@ -4,7 +4,7 @@ include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = imsghuePreferences
 
-imsghuePreferences_FILES = $(wildcard Controllers/*.m Observers/*.m)
+imsghuePreferences_FILES = $(wildcard *.x *.m)
 imsghuePreferences_FRAMEWORKS = UIKit
 imsghuePreferences_PRIVATE_FRAMEWORKS = Preferences
 imsghuePreferences_INSTALL_PATH = /Library/PreferenceBundles
