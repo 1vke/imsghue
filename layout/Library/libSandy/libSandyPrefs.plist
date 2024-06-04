@@ -4,7 +4,7 @@
 <dict>
     <key>AllowedProcesses</key>
     <array>
-        <string>MobileSMS</string>
+        <string>com.apple.MobileSMS</string>
     </array>
     <key>Extensions</key>
     <array>
