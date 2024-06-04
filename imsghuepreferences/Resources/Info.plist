@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>imsghuePreferences</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.1vke.imsghuepreferences</string>
+	<string>com.1vke.imsghue</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>

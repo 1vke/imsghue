@@ -6,4 +6,4 @@ Description: A tweak to modify the colors of the Messages app.
 Maintainer: Lucas Lowe
 Author: Lucas Lowe
 Section: Tweaks
-Depends: mobilesubstrate (>= 0.9.5000)
+Depends: mobilesubstrate (>= 0.9.5000), com.opa334.libsandy

@@ -6,8 +6,9 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = imsghue
 
-imsghue_FILES = Tweak.x
+imsghue_FILES = $(wildcard *.x *.m)
 imsghue_CFLAGS = -fobjc-arc
+imsghue_LIBRARIES = sandy
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 SUBPROJECTS += imsghuepreferences
