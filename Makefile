@@ -11,5 +11,5 @@ imsghue_CFLAGS = -fobjc-arc
 imsghue_LIBRARIES = sandy
 
 include $(THEOS_MAKE_PATH)/tweak.mk
-SUBPROJECTS += imsghuepreferences
+SUBPROJECTS += Preferences
 include $(THEOS_MAKE_PATH)/aggregate.mk
