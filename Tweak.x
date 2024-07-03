@@ -8,12 +8,12 @@ static bool isEnabled() {
 }
 
 static bool initPreferences() {
-    // TODO: improve error catching
+    //TODO: improve error catching
     int result = libSandy_applyProfile("libSandyPrefs");
 
     if (result == kLibSandySuccess) {
-        NSString *suiteName = [NSString stringWithFormat:@"/var/mobile/Library/Preferences/%@.plist", BUNDLE_ID];
-        preferences = [[NSUserDefaults alloc] initWithSuiteName:suiteName];
+        // NSString *suiteName = FS_PREFERENCES(); 
+        preferences = [[NSUserDefaults alloc] initWithSuiteName:FS_PREFERENCES()];
     } else {
         NSLog(@"%@: Applying libSandy profile failed.", result == kLibSandyErrorRestricted ? @"kLibSandyErrorRestricted" : @"kLibSandyErrorXPCFailure");
     }
@@ -25,13 +25,19 @@ static bool initPreferences() {
     %hook CKUITheme
         -(NSArray *)blue_balloonColors {
             if (!isEnabled()) return %orig;
+            NSString *color = [preferences stringForKey:@"primaryColor"];
             return [[NSArray alloc] initWithObjects:
-                                            [UIColor colorWithRed:1.00 green:0.50 blue:0.50 alpha:1], nil];
+                                            color ? [Utilities colorWithHexString:color] : [UIColor systemRedColor], nil];
+        }
+        -(NSArray *)green_balloonColors {
+            if (!isEnabled()) return %orig;
+            NSString *color = [preferences stringForKey:@"primaryColor"];
+            return [[NSArray alloc] initWithObjects:
+                                            color ? [Utilities colorWithHexString:color] : [UIColor systemRedColor], nil];
         }
     %end
 %end
 
 %ctor {
-    initPreferences();
-    %init(main);
+    if(initPreferences()) %init(main)
 }

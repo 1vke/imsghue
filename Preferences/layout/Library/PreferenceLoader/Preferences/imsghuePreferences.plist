@@ -15,7 +15,7 @@
 		<key>isController</key>
 		<true/>
 		<key>label</key>
-		<string>imsghuePreferences</string>
+		<string>imsghue</string>
 	</dict>
 </dict>
 </plist>

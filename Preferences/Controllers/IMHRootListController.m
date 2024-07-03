@@ -1,24 +1,31 @@
-#import <Foundation/Foundation.h>
 #import "IMHRootListController.h"
-#import "../../imsghue.h"
 
 @implementation IMHRootListController {
     NSUserDefaults *preferences;
     IMHPreferenceObserver *enableObserver;
-    - (NSArray *)specifiers {
-        if (!_specifiers) {
-            _specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];
-        }
+    IMHPreferenceObserver *primaryColorObserver;
+}
 
-        return _specifiers;
-    };
+- (NSArray *)specifiers {
+    if (!_specifiers) {
+        _specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];
+    }
+
+    return _specifiers;
 }
 
 - (instancetype)init {
     self = [super init];
 
     preferences = [[NSUserDefaults alloc] initWithSuiteName:BUNDLE_ID];
-    enableObserver = [[IMHPreferenceObserver alloc] initWithKey:@"isEnabled"];
+    enableObserver = [[IMHPreferenceObserver alloc] initWithKey:@"isEnabled" withChangeHandler:^() {
+        //TODO: Handle blurring of components
+    }];
+    primaryColorObserver = [[IMHPreferenceObserver alloc] initWithKey:@"primaryColor" withChangeHandler:^() {
+        //TODO: Research whether here would be a good place to try and somehow refresh the message bubbles to show color changes.
+    }];
     
     return self;
 }
+
+@end
